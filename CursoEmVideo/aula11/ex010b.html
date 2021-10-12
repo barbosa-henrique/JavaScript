@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>País de origem</h1>
+    Informe o país em que você nasceu: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="clicar()">
+    <div id = "res">
+
+    </div>
+    <script>
+        function clicar(){
+            var pais = window.document.querySelector('input#txtpais').value
+            var res = window.document.querySelector('div#res')
+            //pais = String(pais.value) essa linha não precisa, pq na atribuição da variável, já usei o '.value'
+            res.innerHTML = `<p><strong>${pais}</strong></p>`
+            if (pais == 'Brasil') {
+                res.innerHTML += `Você é natural de <strong>${pais}</strong>. Você não é estranjeiro`
+            } else {
+                res.innerHTML += `Você é natural de <strong>${pais}</strong>. Você é estranjeiro`
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body {
+            background-color: rgb(52, 52, 126);
+            color: rgb(248, 234, 234);
+            font: normal 18pt Artial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id='msg'>Clique em mim</div>
+    <div name='div2'>Segundo div</div>
+    <div class='classe'>terceiro div</div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0] //[0] indica que vc quer o primeiro 'p' (Aqui vai o resultado)
+        window.document.write('Está escrito assim: ' + p1.innerText + ' - getElementsByTagName' + '<br/>') //innerText escreve o valor da variável na tela
+        p1.style.color = 'yellow' //muda o estilo da variável p1 para amarelo
+
+        var corpo = window.document.body //variavel com base no elemento 'body' do documento
+        corpo.style.color = 'red'
+        corpo.style.background = 'black'
+
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green' //mudou o backgroud do texto do id 'msg'
+        d.innerText = 'Estou aguardando... - getElementById' //mudou o conteúdo do texto do id 'msg'
+        window.document.write(d.innerText)
+        window.document.getElementById('msg').innerText = 'Olá - getElementById' //altera a mesma tag do id 'msg', mas sem utilizar variável
+
+        var e = window.document.getElementsByName('div2')[0]
+        e.innerText = '<br/> novo div2 - getElementsByName'
+        window.document.write(e.innerText)
+
+        var f = window.document.getElementsByClassName('classe')[0]
+        f.innerText = '<br/> nova classe - getElementsByClassName'
+        window.document.write(f.innerText)
+
+        var selec = window.document.querySelector('div#msg')
+        selec.style.color = 'blue'
+    </script>
+</body>
+</html>
